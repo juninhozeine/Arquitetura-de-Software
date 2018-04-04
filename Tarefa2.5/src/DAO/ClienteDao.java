@@ -1,13 +1,13 @@
 
 package DAO;
 
-import Model.Cliente;
+import Data.Cliente;
 import java.util.Set;
 
 
 
 public interface ClienteDao {    
-    public void create(Cliente c);
+    public void create(Cliente c) throws Exception;
     
     public void delete(String nome);
     

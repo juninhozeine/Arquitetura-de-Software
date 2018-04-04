@@ -5,8 +5,8 @@
  */
 package View;
 
-import DAO.ClienteDaoImp;
-import DAO.PaisDaoImp;
+import DataBase.ClienteDaoImp;
+import DataBase.PaisDaoImp;
 
 
 

@@ -1,7 +1,7 @@
-package DAO;
+package DataBase;
 
-import Model.Cliente;
-import Model.Pais;
+import DAO.PaisDao;
+import Data.Pais;
 import java.util.HashSet;
 import java.util.Set;
 

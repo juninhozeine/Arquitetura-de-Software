@@ -6,10 +6,10 @@
 package View;
 
 
-import DAO.ClienteDaoImp;
-import DAO.PaisDaoImp;
-import Model.Cliente;
-import Model.Pais;
+import DataBase.ClienteDaoImp;
+import DataBase.PaisDaoImp;
+import Data.Cliente;
+import Data.Pais;
 import java.util.stream.Stream;
 import javax.swing.JOptionPane;
 
@@ -85,7 +85,7 @@ public class TelaCliente extends javax.swing.JFrame {
 
         panelfield.setLayout(new java.awt.GridLayout(4, 2));
 
-        namelb.setText("Name");
+        namelb.setText("Nome");
         panelfield.add(namelb);
 
         nomeTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -95,15 +95,15 @@ public class TelaCliente extends javax.swing.JFrame {
         });
         panelfield.add(nomeTxt);
 
-        agelb.setText("Age");
+        agelb.setText("Idade");
         panelfield.add(agelb);
         panelfield.add(agetxt);
 
-        phonelb.setText("Phone");
+        phonelb.setText("Telefone");
         panelfield.add(phonelb);
         panelfield.add(phonetxt);
 
-        countrylb.setText("Country");
+        countrylb.setText("País");
         panelfield.add(countrylb);
 
         paisComboBox.addActionListener(new java.awt.event.ActionListener() {

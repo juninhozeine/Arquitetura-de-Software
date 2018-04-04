@@ -1,7 +1,8 @@
-package DAO;
+package DataBase;
 
 
-import Model.Cliente;
+import DAO.ClienteDao;
+import Data.Cliente;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,6 +10,7 @@ public class ClienteDaoImp implements ClienteDao{
     
     public Set<Cliente> clienteDB;
     
+    @Override
     public void create(Cliente c) throws Exception {
         if (clienteDB == null)
             clienteDB = new HashSet<>();

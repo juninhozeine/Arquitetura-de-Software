@@ -64,7 +64,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="namelb">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Name"/>
+            <Property name="text" type="java.lang.String" value="Nome"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="nomeTxt">
@@ -74,21 +74,21 @@
         </Component>
         <Component class="javax.swing.JLabel" name="agelb">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Age"/>
+            <Property name="text" type="java.lang.String" value="Idade"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="agetxt">
         </Component>
         <Component class="javax.swing.JLabel" name="phonelb">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Phone"/>
+            <Property name="text" type="java.lang.String" value="Telefone"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="phonetxt">
         </Component>
         <Component class="javax.swing.JLabel" name="countrylb">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Country"/>
+            <Property name="text" type="java.lang.String" value="Pa&#xed;s"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="paisComboBox">

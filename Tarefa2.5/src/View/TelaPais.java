@@ -5,8 +5,8 @@
  */
 package View;
 
-import DAO.PaisDaoImp;
-import Model.Pais;
+import DataBase.PaisDaoImp;
+import Data.Pais;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
