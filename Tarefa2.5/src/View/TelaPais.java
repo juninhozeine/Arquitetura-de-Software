@@ -5,7 +5,7 @@
  */
 package View;
 
-import Controller.ControllerPais;
+import DAO.PaisDaoImp;
 import Model.Pais;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class TelaPais extends javax.swing.JFrame {
 
-    private ControllerPais paisDB;
+    private PaisDaoImp paisDB;
     
     /**
      * Creates new form CountryUI
@@ -26,7 +26,7 @@ public class TelaPais extends javax.swing.JFrame {
         initComponents();
     }
 
-    TelaPais(ControllerPais countryDB) {
+    TelaPais(PaisDaoImp countryDB) {
         this();
         
         this.paisDB = countryDB;
@@ -100,7 +100,7 @@ public class TelaPais extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void listbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listbtActionPerformed
-        listarea.setText(paisDB.list().toString());
+        listarea.setText(paisDB.listPais().toString());
     }//GEN-LAST:event_listbtActionPerformed
 
     private void createbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createbtActionPerformed
@@ -112,7 +112,7 @@ public class TelaPais extends javax.swing.JFrame {
         p.setDigitos(new Integer(telefoneDigitoTxt.getText()));
         
         try {
-            paisDB.create(p);
+            paisDB.createPais(p);
             
         } catch (Exception ex) {
             JOptionPane.showConfirmDialog(this, ex.getMessage());

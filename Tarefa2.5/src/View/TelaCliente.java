@@ -6,8 +6,8 @@
 package View;
 
 
-import Controller.ControllerCliente;
-import Controller.ControllerPais;
+import DAO.ClienteDaoImp;
+import DAO.PaisDaoImp;
 import Model.Cliente;
 import Model.Pais;
 import java.util.stream.Stream;
@@ -19,8 +19,8 @@ import javax.swing.JOptionPane;
  */
 public class TelaCliente extends javax.swing.JFrame {
 
-    private ControllerCliente clienteDB;
-    private ControllerPais paisDB;
+    private ClienteDaoImp clienteDB;
+    private PaisDaoImp paisDB;
     private Pais paisSelecionado;
 
     /**
@@ -30,13 +30,13 @@ public class TelaCliente extends javax.swing.JFrame {
         initComponents();
     }
 
-    TelaCliente(ControllerCliente customerDB, ControllerPais countryDB) {
+    TelaCliente(ClienteDaoImp customerDB, PaisDaoImp countryDB) {
         this();
 
         this.clienteDB = customerDB;
         this.paisDB = countryDB;
 
-        this.paisDB.list().forEach(item -> paisComboBox.addItem(item.getNome()));
+        this.paisDB.listPais().forEach(item -> paisComboBox.addItem(item.getNome()));
     }
 
     /**
@@ -170,7 +170,7 @@ public class TelaCliente extends javax.swing.JFrame {
 
     private void paisComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paisComboBoxActionPerformed
 
-        for (Pais currentCountry : paisDB.list()) {
+        for (Pais currentCountry : paisDB.listPais()) {
             if (currentCountry.getNome().equalsIgnoreCase((String) paisComboBox.getSelectedItem())) {
                 paisSelecionado = currentCountry;
             }

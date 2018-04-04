@@ -1,21 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package DAO;
 
-import Model.Cliente;
+import Model.Pais;
+import java.util.Set;
 
-/**
- *
- * @author Aluno
- */
-public interface PaisDao {
-    public void save(Pais entity);
-	
-    public void delete(String nome);
-	
-    public Cliente find(String nome);
+
+
+public interface PaisDao {    
+    public void createPais(Pais p);
+    
+    public void deletePais(String nome);
+    
+    public Set<Pais> listPais();   
+    
+    public void updatePais(Pais p);
 }
-ss

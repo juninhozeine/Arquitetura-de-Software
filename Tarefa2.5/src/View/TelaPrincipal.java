@@ -5,8 +5,8 @@
  */
 package View;
 
-import Controller.ControllerCliente;
-import Controller.ControllerPais;
+import DAO.ClienteDaoImp;
+import DAO.PaisDaoImp;
 
 
 
@@ -16,8 +16,8 @@ import Controller.ControllerPais;
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
-    private ControllerCliente clienteDB;
-    private ControllerPais paisDB;
+    private ClienteDaoImp clienteDB;
+    private PaisDaoImp paisDB;
     
     /**
      * Creates new form MainWindow
@@ -25,8 +25,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public TelaPrincipal() {
         initComponents();
         
-        clienteDB = new ControllerCliente();
-        paisDB = new ControllerPais();
+        clienteDB = new ClienteDaoImp();
+        paisDB = new PaisDaoImp();
     }
 
     /**
