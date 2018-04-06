@@ -1,0 +1,20 @@
+create database banco;
+
+use banco;
+
+
+create table pais(  id_pais int NOT NULL auto_increment,     nome_pais varchar(50),     sigla_pais varchar(5),     digitos_pais int,     primary key (id_pais) )
+
+
+create table cliente(
+	id_cliente int NOT NULL auto_increment,
+    nome_cliente varchar(50),
+    idade_cliente int,
+    limite_cliente float,
+    telefone_cliente varchar(20),
+    id_pais int,
+    FOREIGN KEY (id_pais) REFERENCES pais(id_pais),
+    primary key (id_cliente)
+);
+
+
