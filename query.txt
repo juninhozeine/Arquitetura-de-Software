@@ -3,7 +3,7 @@ create database banco;
 use banco;
 
 
-create table pais(  id_pais int NOT NULL auto_increment,     nome_pais varchar(50),     sigla_pais varchar(5),     digitos_pais int,     primary key (id_pais) )
+create table pais(  id_pais int NOT NULL auto_increment,     nome_pais varchar(50),     sigla_pais varchar(5),     digitos_pais int,     primary key (id_pais) );
 
 
 create table cliente(
