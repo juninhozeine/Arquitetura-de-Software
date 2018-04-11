@@ -8,6 +8,7 @@ package DAO;
 import Connection.ConnectionFactory;
 import Data.Cliente;
 import DataBase.ClienteDaoImp;
+import java.awt.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -31,12 +32,12 @@ public class ClienteDAO {
         clienteDaoImp.create(cliente);
     }
     
-    public void list(){
-        
+    public void list(Cliente cliente){
+        clienteDaoImp.List(cliente);
     }
     
-    public void delete(Cliente cliente, String nome){
-        clienteDaoImp.delete(nome);
+    public void delete(Cliente cliente, int id){
+        clienteDaoImp.delete(id);
     }
     public void update(Cliente cliente) {
         clienteDaoImp.update(cliente);

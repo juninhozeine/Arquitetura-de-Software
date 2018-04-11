@@ -22,13 +22,12 @@ public class PaisDAO {
     public void createPais(Pais pais){
         paisDaoImp.createPais(pais);
     }
-    
     public void list(){
         
     }
     
-    public void delete(Pais pais, String nome){
-        paisDaoImp.deletePais(nome);
+    public void delete(Pais pais, int id){
+        paisDaoImp.deletePais(id);
     }
     public void update(Pais pais) {
         paisDaoImp.updatePais(pais);

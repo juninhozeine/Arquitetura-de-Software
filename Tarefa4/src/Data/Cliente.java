@@ -11,6 +11,14 @@ public class Cliente {
     private Pais pais;
     private float limiteCredito;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Cliente() {
     }
 
