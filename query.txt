@@ -1,20 +1,72 @@
-create database banco;
+-- MySQL Workbench Forward Engineering
 
-use banco;
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, 
+FOREIGN_KEY_CHECKS=0;
 
-create table pais(  id_pais int NOT NULL auto_increment,     nome_pais varchar(50),     sigla_pais varchar(5),     digitos_pais int,     primary key (id_pais) );
-
-
-create table cliente(
-	id_cliente int NOT NULL auto_increment,
-    nome_cliente varchar(50),
-    idade_cliente int,
-    limite_cliente float,
-    telefone_cliente varchar(20),
-    id_pais int,
-    FOREIGN KEY (id_pais) REFERENCES pais(id_pais),
-    primary key (id_cliente)
-);
+SET @OLD_SQL_MODE=@@SQL_MODE, 
+SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 
+
+----------------------- Schema banco
+-------------------------
+
+CREATE SCHEMA IF NOT EXISTS `banco` DEFAULT CHARACTER SET utf8 ;
+
+USE `banco` ;
+
+
+--------------------
+-- Table `banco`.`Pais`
+----------------------------
+
+CREATE TABLE IF NOT EXISTS `banco`.`Pais` (
+  
+`id_pais` INT NOT NULL AUTO_INCREMENT,
+ 
+`nome_pais` VARCHAR(50) NOT NULL,
+  
+`sigla_pais` VARCHAR(5) NOT NULL,
+  
+`digitos_pais` VARCHAR(45) NOT NULL,
+  
+PRIMARY KEY (`id_pais`))
+ENGINE = InnoDB;
+
+
+--------------------
+-- Table `banco`.`Cliente`
+------------------------
+
+CREATE TABLE IF NOT EXISTS `banco`.`Cliente` (
+  
+`id_cliente` INT NOT NULL AUTO_INCREMENT,
+  
+`nome_cliente` VARCHAR(50) NOT NULL,
+  
+`idade_cliente` INT NOT NULL,
+  
+`limite_cliente` FLOAT NOT NULL,
+  
+`telefone_cliente` VARCHAR(20) NOT NULL,
+  
+`FK_Pais_id_pais` INT NOT NULL,
+  
+PRIMARY KEY (`id_cliente`),
+  
+INDEX `fk_Cliente_Pais_idx` (`FK_Pais_id_pais` ASC),
+  CONSTRAINT `fk_Cliente_Pais`
+    FOREIGN KEY (`FK_Pais_id_pais`)
+    REFERENCES `banco`.`Pais` (`id_pais`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
